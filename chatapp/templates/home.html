@@ -20,10 +20,9 @@
 
         var username = "{{request.user.username}}"
         var authenticated = "{{request.user.is_authenticated}}"
-
-        if (authenticated) {
+        if (authenticated == 'True') {
             document.addEventListener('DOMContentLoaded', function () {
-                var exampleSocket = new WebSocket("ws://" + window.location.host + "/ws/chat/");
+                var exampleSocket = new WebSocket("ws://" + window.location.host + "/ws/chat/" + username + "/");
                 // var exampleSocket1 = new WebSocket("ws://" + window.location.host + "/ws/notifications/outbid/" + username + "/");
 
                 const nl = document.querySelector("#notifylist");
